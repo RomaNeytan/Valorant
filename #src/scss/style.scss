@@ -1,0 +1,154 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@import "fonts.scss";
+@import "vars.scss";
+@import "burger.scss";
+@import "mixin.scss";
+@import "ibg.scss";
+// Blocks
+
+.global-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: " ";
+        display: block;
+        width: 1000px;
+        height: 1000px;
+        background: #ff4656;
+        border-radius: 50%;
+        position: absolute;
+        left: -285px;
+        top: -611px;
+    }
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: #ff4656;
+        border-radius: 50%;
+        position: absolute;
+        right: 310px;
+        top: 10px;
+        
+    }
+
+    &__inner {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: " ";
+            display: block;
+            content: " ";
+            display: block;
+            width: 120px;
+            height: 120px;
+            background: #EFEFEF;
+            border-radius: 50%;
+            position: absolute;
+            right:6%;
+            top:2%;
+            z-index: 1;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: #505155;
+            border-radius: 50%;
+            position: absolute;
+            right: 55px;
+            top: 200px;
+        }
+    }
+
+    &__main {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        height: 500px;
+        background: #fff;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+// Основная сетка
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    font-family: "Montserrat-Bold";
+    color: $main-color;
+    font-size: 16px;
+    margin: 0;
+    background: #1f2326;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0 0 4px;
+}
